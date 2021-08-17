@@ -30,27 +30,58 @@ import UIKit
 //
 //a - b
 
+//func missingNumber(_ nums: [Int]) -> Int {
+//    var newArray: [Int] = []
+//    var i = 0
+//    while i < nums.count + 1{
+//        newArray.append(i)
+//        i += 1
+//    }
+//    print(newArray)
+//    var a = 0
+//    newArray.map { i in
+//        print(a)
+//        a += i
+//    }
+//    print(a)
+//    var b = 0
+//    nums.map {i in
+//        print(b)
+//        b += i
+//    }
+//    print(b)
+//    return a - b
+//}
+
+
 func missingNumber(_ nums: [Int]) -> Int {
-    var newArray: [Int] = []
-    var i = 0
-    while i < nums.count + 1{
-        newArray.append(i)
-        i += 1
-    }
-    print(newArray)
-    var a = 0
-    newArray.map { i in
-        print(a)
-        a += i
-    }
-    print(a)
-    var b = 0
-    nums.map {i in
-        print(b)
-        b += i
-    }
-    print(b)
-    return a - b
+    
+    let n = nums.count
+//    var a = 0
+//    nums.map {a += $0 }
+    var b = nums.reduce(0, +)
+    return n * (n + 1) / 2 - b
+    
+//    var newArray: [Int] = []
+//    var i = 0
+//    while i < nums.count + 1{
+//        newArray.append(i)
+//        i += 1
+//    }
+//    print(newArray)
+//    var a = 0
+//    newArray.map { i in
+//        print(a)
+//        a += i
+//    }
+//    print(a)
+//    var b = 0
+//    nums.map {i in
+//        print(b)
+//        b += i
+//    }
+//    print(b)
+//    return a - b
 }
 
 missingNumber([9,6,4,2,3,5,7,0,1])
