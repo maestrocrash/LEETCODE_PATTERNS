@@ -5,7 +5,11 @@ func singleNumber(_ nums: [Int]) -> Int {
     var mask = 0
     
     for num in nums {
-        mask ^= num
+        //mask ^= num
+        
+        if mask != num {
+           mask = num
+        }
     }
     
     return mask
