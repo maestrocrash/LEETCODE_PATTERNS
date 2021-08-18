@@ -59,7 +59,7 @@ func missingNumber(_ nums: [Int]) -> Int {
     let n = nums.count
 //    var a = 0
 //    nums.map {a += $0 }
-    var b = nums.reduce(0, +)
+    let b = nums.reduce(0, +)
     return n * (n + 1) / 2 - b
     
 //    var newArray: [Int] = []
@@ -84,4 +84,12 @@ func missingNumber(_ nums: [Int]) -> Int {
 //    return a - b
 }
 
+
+func missingNumber1(_ nums: [Int]) -> Int {
+    let n = nums.count
+    let a = nums.map {$0}.reduce(0, +)
+    return n * ( n + 1) / 2 - a
+}
+
 missingNumber([9,6,4,2,3,5,7,0,1])
+missingNumber1([9,6,4,2,3,5,7,0,1])
