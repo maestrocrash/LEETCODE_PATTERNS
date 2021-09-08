@@ -2,20 +2,25 @@ import UIKit
 
 class NumArray {
 
-    var array: [Int] = []
+    var arraySum: [Int] = []
     
     init(_ nums: [Int]) {
-        self.array = nums
+     
+        var cur_sum = 0
+        
+        for i in nums {
+            cur_sum += i
+            arraySum.append(cur_sum)
+        }
+    
     }
     
     func sumRange(_ left: Int, _ right: Int) -> Int {
-        var sum: Int = 0
-
-        for i in left...right {
-            sum += array[i]
+        if left == 0 {
+            return self.arraySum[right]
+        } else {
+            return self.arraySum[right] - self.arraySum[left-1]
         }
-        
-        return sum
     }
 }
 
